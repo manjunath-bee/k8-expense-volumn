@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: mysql-headless
   namespace: expense
   labels:
     app: mysql
@@ -27,7 +27,7 @@ spec:
     matchLabels:
       app: mysql
       project: expense
-  serviceName: "mysql"
+  serviceName: "mysql-headless"
   replicas: 2 # by default is 1
   minReadySeconds: 10 # by default is 0
   template:
